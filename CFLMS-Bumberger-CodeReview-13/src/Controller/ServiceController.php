@@ -15,7 +15,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class ServiceController extends AbstractController
 {
     /**
-     * @Route("/", name="service_index", methods={"GET"})
+     * @Route("/", name="service_landing", methods={"GET"})
+     */
+    public function landing(): Response
+    {
+        $services = $this->getDoctrine()
+            ->getRepository(Service::class)
+            ->findAll();
+
+        return $this->render('service/landing.html.twig', [
+            'services' => $services,
+        ]);
+    }
+    /**
+     * @Route("/overview", name="service_index", methods={"GET"})
      */
     public function index(): Response
     {
