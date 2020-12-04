@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
-		<h1>Service index</h1>
+	<main class="container-fluid">
+		<h1>Overview</h1>
 
 		<table class="table">
 			<thead>
@@ -40,7 +40,7 @@
 						<td>{{ service.street }}</td>
 						<td>{{ service.zip }}</td>
 						<td>{{ service.city }}</td>
-						<td><img src='{{ service.url }}'></img></td>
+						<td><img class="sImg" src='{{ service.url }}'></img></td>
 						<td>{{ service.type }}</td>
 						<td>
 							<a href="{{ path('service_show', {'id': service.id}) }}">show</a>
