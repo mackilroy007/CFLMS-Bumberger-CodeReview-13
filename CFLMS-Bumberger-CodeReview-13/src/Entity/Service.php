@@ -87,7 +87,7 @@ class Service
     /**
      * @var string|null
      *
-     * @ORM\Column(name="type", type="string", length=0, nullable=true, options={"default"="other"})
+     * @ORM\Column(name="type", type="string", length=255, nullable=true, options={"default"="other"})
      */
     private $type = 'other';
 

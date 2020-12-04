@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service index{% endblock %}
+
+{% block body %}
+    <h1>Service index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Info</th>
+                <th>Capacity</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Street</th>
+                <th>Zip</th>
+                <th>City</th>
+                <th>Url</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.name }}</td>
+                <td>{{ service.info }}</td>
+                <td>{{ service.capacity }}</td>
+                <td>{{ service.email }}</td>
+                <td>{{ service.phoneNumber }}</td>
+                <td>{{ service.street }}</td>
+                <td>{{ service.zip }}</td>
+                <td>{{ service.city }}</td>
+                <td>{{ service.url }}</td>
+                <td>{{ service.type }}</td>
+                <td>
+                    <a href="{{ path('service_show', {'id': service.id}) }}">show</a>
+                    <a href="{{ path('service_edit', {'id': service.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('service_new') }}">Create new</a>
+{% endblock %}
