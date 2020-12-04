@@ -1,9 +1,70 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Service{% endblock %}
+{% block title %}Edit Service
+{% endblock %}
 
 {% block body %}
-    <h1>Landing Page</h1>
+	<div class="jumbotron jumbotron-fluid mb-0">
+		<div class="container">
+			<h1 class="display-4 d-flex flex-nowwrap">
+				<span class="bg-light">
+					<b>Vienna Travel</b></span>
+					</h1>
+					<p class="lead d-flex flex-nowwrap">
+						<span class="bg-light">
+							We offer fun user created activities to enjoy alone or with your families in Vienna.
+						</span>
+					</p>
+				</div>
+			</div>
 
-   
-{% endblock %}
+			<main>
+            <article>
+				<section class="one py-5 text-center">
+					<br>
+					<h3>We never pick for you, all we do is connect people who like like minded activities</h3>
+					<br>
+					<p>If you want to add your own activity, head over to create! Once conpleted you can experience the joy of collectivity!</p>
+					<br>
+				</section>
+            <section>
+				{% for service in services %}
+
+					<div class="card py-5"  id="{{ service.id }}">
+						<div class="row no-gutters">
+							<div class="col-md-4">
+								<img src="{{ service.url }}" class="card-img px-2" alt="{{ service.name }}">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title"><b>{{ service.name }}</b></h5>
+									<p class="card-text">{{ service.info }}</p>
+									<p class="card-text">Max Croud Size:
+										{{ service.info }}</p>
+									<p class="card-text">Location:
+										{{ service.street }},
+										{{service.city}},
+										{{service.zip}}</p>
+									<p class="card-text">Date and Time:
+										{{ service.date | date('Y-m-d')}}
+										at
+										{{ service.time | date('H:i:s')}}</p>
+									<p class="card-text">Conntact Number:{{ service.phoneNumber }}
+										Email:
+										{{service.email}}</p>
+
+									<p class="card-text">
+										<small class="text-muted">Activity type:
+											{{ service.type }}</small>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% else %}
+					<h2>Be the first to add an Event!</h2>
+				{% endfor %}
+                </section>
+                </article>
+			</main>
+		{% endblock %}

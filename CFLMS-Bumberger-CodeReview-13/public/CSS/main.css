@@ -2,3 +2,24 @@
     width: 4em;
     height: 6em;
 }
+
+.jumbotron{
+    background-image: url("../img/mountain.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 15em;
+}
+
+.one{
+    background-color: #F8F4A6;
+    /* height: 10em;
+    margin-top: -1em; */
+}
+
+/* .one>h3{
+    margin-top: 5em;
+} */
+
+.card{
+    border-color: transparent;
+}
