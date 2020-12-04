@@ -6,6 +6,7 @@ use App\Entity\Service;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ServiceType extends AbstractType
 {
@@ -13,6 +14,8 @@ class ServiceType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('date')
+            ->add('time')
             ->add('info')
             ->add('capacity')
             ->add('email')
