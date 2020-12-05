@@ -43,8 +43,8 @@
 						<td><img class="sImg" src='{{ service.url }}'></img></td>
 						<td>{{ service.type }}</td>
 						<td>
-							<a href="{{ path('service_show', {'id': service.id}) }}">show</a>
-							<a href="{{ path('service_edit', {'id': service.id}) }}">edit</a>
+                            <button class="btn btn-outline-warning my-1"><a href="{{ path('service_show', {'id': service.id}) }}">show</a></button>
+                            <button class="btn btn-outline-primary my-1"><a href="{{ path('service_edit', {'id': service.id}) }}">edit</a></button>
 						</td>
 					</tr>
 				{% else %}

@@ -23,3 +23,7 @@
 .card{
     border-color: transparent;
 }
+.btn>a{
+    text-decoration: none;
+    color: black;
+}
