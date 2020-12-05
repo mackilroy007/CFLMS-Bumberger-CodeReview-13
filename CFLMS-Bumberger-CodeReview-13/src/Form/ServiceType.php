@@ -6,7 +6,15 @@ use App\Entity\Service;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+
+// Now we need some classes in our Controller because we need that in our form (for the inputs that we will create)
+use Symfony\Component\Form \Extension\Core\Type\TextType ;
+use Symfony\Component\Form \Extension\Core\Type\TextareaType ;
+use Symfony\Component\ Form\Extension\Core\Type \DateTimeType;
+use Symfony\ Component\Form\Extension\Core \Type\ChoiceType;
+use Symfony\Component\Form\Extension \Core\Type\SubmitType;
+use App\Entity\Todo ;
+
 
 class ServiceType extends AbstractType
 {
